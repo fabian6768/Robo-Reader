@@ -1,7 +1,7 @@
 	/*************************************************************************
 	 * 
 	 * 
-	 *  File manager class taken from webcourses and modified to suit the program
+a	 *  File manager class taken from webcourses and modified to suit the program
 	 *  Author: Ciprian Anton
 	 *  2017
 	 *  
@@ -97,6 +97,24 @@ public class FileManager {
 	void closeWriteFile()
 	{
 		pwInput.close();
-	}  
+	}
+	
+	void readLines(){
+		//put inside a try
+		try{
+			//make a scanner obj
+			input = new Scanner(choice); 
+			//while input has a next line
+			while (input.hasNextLine())
+			{      
+				//printing the lines
+				System.out.println(input.nextLine());
+			}
+		}
+		//if can't
+		catch(FileNotFoundException e){
+			//print error
+			System.out.println("error : " + e.getMessage());
+		}
+	}
 }
-

@@ -28,9 +28,9 @@ public class ProjectControl
 		 System.out.print("1. Open File\n");
 		 System.out.print("2. Veify Language\n");
 		 System.out.print("3. Display the top ten words\n");
-		 System.out.print("4. Exit\n");
-		 System.out.print("5. Display whole file\n");
-		 System.out.print("6. Filter unwanted words\n");
+		 System.out.print("4. Display whole file\n");
+		 System.out.print("5. Filter unwanted words\n");
+		 System.out.print("6. Exit\n");
 		 System.out.print("Please select one of the following options: ");
 		 
 		 
@@ -39,7 +39,8 @@ public class ProjectControl
 		 switch(choice)
 		 {
 		 	case 1:
-
+		 		clearScreen();
+		 		
 		 		System.out.print("Please enter a filename: ");
 		 		filename = option.next();
 		 		
@@ -60,7 +61,8 @@ public class ProjectControl
 		    	break;
 		    
 		 	case 2:
-		 	
+		 		clearScreen();
+		 		
 		 		if(filecount == 0)
 		 		{
 		 			System.out.println("No file was opened. Please open a file to correct this error:");
@@ -74,6 +76,8 @@ public class ProjectControl
 		 		break;
 		 		
 		 	case 3:
+		 		clearScreen();
+		 		
 		 		if(filecount == 0)
 		 		{
 		 			System.out.println("No file was read. Please open a file to correct this error:");
@@ -94,7 +98,23 @@ public class ProjectControl
 			    	 }
 		 		}
 		 		break;
+		 	
 		 	case 4:
+		 		//clearScreen();
+		 		
+		 		//open the file
+		 		FileManager read = new FileManager("Z:\\Java\\R\\src\\" + filename + ".txt");
+		 		//connect to the file
+		 		read.connectToFile();
+		 		//read the lines and display them
+		 		read.readLines();
+		 		//close the file
+		 		read.closeReadFile();
+		 		//break so nothing happens after
+		 		break;
+		 	case 5:
+		 		
+		 	case 6:
 		 		System.out.println("Thank You for Using Robo-Reader \n          Goodbye");
 		 		break;
 		 	default:
@@ -105,6 +125,11 @@ public class ProjectControl
 		option.close();
 
 	 }
+	 
+	 public static void clearScreen() {  
+		    //System.out.print("\033[H\033[2J");  
+		    System.out.flush();  
+	 } 
 	 
 }
 
