@@ -30,7 +30,8 @@ public class FindLan
 	
 	//This will verify for stop words in the file
 	public int[] findLan()
-	{                                                
+	{                     
+		
 		// Creating connection to the file and reading all the stop words
 		
     	e2.connectToFile();
@@ -90,6 +91,7 @@ public class FindLan
 	//verify which language does the file hold
 	public String cLang()
 	{
+		//System.out.println(words.toString());
 		int[] counters = findLan();
 		String lang = "";
 		

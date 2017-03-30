@@ -113,9 +113,28 @@ public class ProjectControl
 		 		//break so nothing happens after
 		 		break;
 		 	case 5:
+		 		// enter word want to exclude
+		 		System.out.print("Enter a word you want to exclude : ");
+		 		//make a scanner object
+		 		Scanner scanner = new Scanner(System.in);
+		 		//get the string
+		 		String word = scanner.nextLine();
+		 		//print the string
+		 		System.out.println(word);
+		 		//open the file
+		 		FileManager read1 = new FileManager("Z:\\Java\\R\\src\\" + filename + ".txt");
+		 		//connect to the file
+		 		read1.connectToFile();
+		 		//read the lines and display them
+		 		read1.readLines();
+		 		//close the file
+		 		read1.closeReadFile();
+		 		//break so nothing happens after
+		 		break;
 		 		
 		 	case 6:
 		 		System.out.println("Thank You for Using Robo-Reader \n          Goodbye");
+		 		System.exit(0);
 		 		break;
 		 	default:
 		 		System.out.println("Option is not available");

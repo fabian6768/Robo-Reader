@@ -99,16 +99,16 @@ public class FileManager {
 		pwInput.close();
 	}
 	
-	void readLines(){
+	void checkword(String word){
 		//put inside a try
 		try{
 			//make a scanner obj
 			input = new Scanner(choice); 
 			//while input has a next line
-			while (input.hasNextLine())
-			{      
-				//printing the lines
-				System.out.println(input.nextLine());
+			while (input.hasNext()){   
+				if(input.next().equals(word)){
+					continue;
+				}
 			}
 		}
 		//if can't
@@ -116,5 +116,28 @@ public class FileManager {
 			//print error
 			System.out.println("error : " + e.getMessage());
 		}
+	}
+	
+	ArrayList<String> readLines(){
+		ArrayList<String> file = new ArrayList<String>();
+		//put inside a try
+		try{
+			//make a scanner obj
+			input = new Scanner(choice); 
+			//while input has a next line
+			while (input.hasNextLine())
+			{   
+				//checkword(null);
+				//printing the lines
+				file.add(input.nextLine());
+			}
+			return file;
+		}
+		//if can't
+		catch(FileNotFoundException e){
+			//print error
+			System.out.println("error : " + e.getMessage());
+		}
+		return file;
 	}
 }
