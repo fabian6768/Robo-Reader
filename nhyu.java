@@ -178,11 +178,6 @@ public class nhyu {
 		gbc_separator.gridy = 8;
 		east.add(separator, gbc_separator);
 		
-		filterWords.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		
 		/******************************************************************
 		 * THIS IS THE SOUTH PANEL
 		 ******************************************************************/
